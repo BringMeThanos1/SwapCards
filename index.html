@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animeworld</title>
+    <style media="screen">
+      *{
+        box-sizing: border-box;
+      }
+      body{
+background-image: linear-gradient(to right bottom, #d3ce11, #dfae00, #e58c00, #e76700, #e23b1b);
+        display :flex;
+        align-items: center;
+        justify-content: center;
+        height:100vh;
+        overflow: hidden;
+        margin:0px;
+      }
+      .cont {
+        display: flex;
+        width: 90vw;
+      }
+      .panel {
+        background-size: auto 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height:90vh;
+        border-radius: 20px;
+        flex: 0.5;
+        margin:10px;
+        position: relative;
+        transition: flex 0.7s ;
+        cursor: pointer;
+      }
+      .panel h2{
+        color:white;
+        text-shadow: 2px 2px 2px black;
+        position :absolute;
+        font-size: 40px;
+        bottom:10px;
+        left:10px;
+        opacity:0;
+      }
+      .panel.active{
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex:5;
+        opacity:1;
+        cursor: pointer;
+      }
+      .panel.active h2{
+        opacity: 0.8;
+        transition: flex 0.4s ease-in;
+      }
+      @media (max-width:1080px) {
+        .cont{
+          widht:100vw;
+        }
+        .panel:nth-of-type(3),
+        .panel:nth-of-type(4),
+        .panel:nth-of-type(5){
+          display: none;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div  onclick="play1()" class="panel active"style="background-image:url('1014461.jpg')">
+        <h2>kamado <br> Tanjiro</h2>
+        <audio id="audio1">
+         <source src="Tanjiro saying his name (sub).mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div onclick="play3()" class="panel "style="background-image:url('853978.png')">
+        <h2>Izuku <br>Midoria</h2>
+        <audio id="audio3">
+         <source src="Deku saying his name.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div onclick="play4()" class="panel "style="background-image:url('669475.jpg')">
+        <h2>Saitama</h2>
+        <audio id="audio4">
+         <source src="Satima's secret one punch man ENGLISH DUBBED-[AudioTrimmer.com].mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div onclick="play2()"  class="panel "style="background-image:url('948502.jpg')">
+        <h2>Uzumaki <br>Naruto</h2>
+        <audio id="audio2">
+         <source src="dattebayo.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div onclick="play5()" class="panel"style="background-image:url('goku_black_4k_8k-7680x4320.jpg')">
+        <h2>Goku</h2>
+        <audio id="audio5">
+         <source src="Kamehameha Goku SOUND EFFECT.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+    </div>
+
+  </body>
+  <script type="text/javascript">
+  var panels = document.querySelectorAll('.panel')
+    panels.forEach((panel) => {
+      panel.addEventListener('click',()=>{
+        removeac()
+        panel.classList.add('active')
+      })
+
+    })
+    function removeac(){
+      panels.forEach((panel) => {
+        panel.classList.remove('active')
+      })
+
+    }
+    var x=document.getElementById('audio1');
+    function play1(){
+      x.play();
+    }
+    var y=document.getElementById('audio2');
+    function play2(){
+      y.play();
+    }
+    var z=document.getElementById('audio3');
+    function play3(){
+      z.play();
+    }
+    var i=document.getElementById('audio4');
+    function play4(){
+      i.play();
+    }
+    var j=document.getElementById('audio5');
+    function play5(){
+      j.play();
+    }
+
+
+
+
+
+  </script>
+</html>
